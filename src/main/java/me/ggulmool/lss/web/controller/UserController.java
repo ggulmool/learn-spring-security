@@ -14,18 +14,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
 
-    private final UserRepository userRepository;
-
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    //
+    private UserRepository userRepository;
 
     @RequestMapping
     public ModelAndView list() {
@@ -50,7 +45,7 @@ public class UserController {
 
     @RequestMapping(value = "delete/{id}")
     public ModelAndView delete(@PathVariable("id") Long id) {
-        this.userRepository.deleteUser(id);
+        this.userRepository.delete(id);
         return new ModelAndView("redirect:/user/");
     }
 
@@ -65,4 +60,5 @@ public class UserController {
     public String createForm(@ModelAttribute User user) {
         return "tl/form";
     }
+
 }

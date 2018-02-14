@@ -7,10 +7,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 - step1-2: URL Authorization
 - step1-3: 커스텀 로그인 화면 적용
 - step1-4: 로그아웃 처리
-
-### 기술 스택
-- web/REST: SpringBoot 1.5.2
-- security: Spring Security 4.2.x
-- persistence: Spring Data JPA and Hibernate
-- persistence providers: HSQL or H2
-- template-engine:thymeleaf
+- step1-5: Spring-Data-JPA 적용
