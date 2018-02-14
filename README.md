@@ -6,6 +6,7 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 1. [Secure a ﻿﻿Simple﻿﻿ Spring MVC Application](https://github.com/ggulmool/learn-spring-security/tree/step1)
   - step1-1: Basic Spring Security Java Config
   - step1-2: URL Authorization
+  - step1-3: 커스텀 로그인 화면 적용
 
 ### 기술 스택
 - web/REST: SpringBoot 1.5.2
