@@ -2,7 +2,9 @@ package me.ggulmool.lss.service;
 
 import javax.transaction.Transactional;
 
+import me.ggulmool.lss.model.PasswordResetToken;
 import me.ggulmool.lss.model.VerificationToken;
+import me.ggulmool.lss.persistence.PasswordResetTokenRepository;
 import me.ggulmool.lss.persistence.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +23,8 @@ class UserService implements IUserService {
     @Autowired
     private VerificationTokenRepository verificationTokenRepository;
 
-    //
-
-    @Override
-    public User findUserByEmail(final String email) {
-        return userRepository.findByEmail(email);
-    }
+    @Autowired
+    private PasswordResetTokenRepository passwordTokenRepository;
 
     @Override
     public User registerNewUser(final User user) throws EmailExistsException {
@@ -34,6 +32,28 @@ class UserService implements IUserService {
             throw new EmailExistsException("There is an account with that email address: " + user.getEmail());
         }
         return userRepository.save(user);
+    }
+
+    @Override
+    public User findUserByEmail(final String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    @Override
+    public void createPasswordResetTokenForUser(final User user, final String token) {
+        final PasswordResetToken myToken = new PasswordResetToken(token, user);
+        passwordTokenRepository.save(myToken);
+    }
+
+    @Override
+    public PasswordResetToken getPasswordResetToken(final String token) {
+        return passwordTokenRepository.findByToken(token);
+    }
+
+    @Override
+    public void changeUserPassword(final User user, final String password) {
+        user.setPassword(password);
+        userRepository.save(user);
     }
 
     @Override
@@ -51,8 +71,6 @@ class UserService implements IUserService {
     public void saveRegisteredUser(final User user) {
         userRepository.save(user);
     }
-
-    //
 
     private boolean emailExist(final String email) {
         final User user = userRepository.findByEmail(email);
