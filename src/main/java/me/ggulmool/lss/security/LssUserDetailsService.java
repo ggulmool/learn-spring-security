@@ -1,7 +1,7 @@
 package me.ggulmool.lss.security;
 
 import me.ggulmool.lss.persistence.UserRepository;
-import me.ggulmool.lss.web.model.User;
+import me.ggulmool.lss.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,7 +28,7 @@ public class LssUserDetailsService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("No user found with username: " + email);
         }
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), true, true, true, true, getAuthorities(ROLE_USER));
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), user.getEnabled(), true, true, true, getAuthorities(ROLE_USER));
     }
 
     private Collection<? extends GrantedAuthority> getAuthorities(String role) {

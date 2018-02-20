@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan("me.ggulmool.lss")
 @EnableJpaRepositories("me.ggulmool.lss")
-@EntityScan("me.ggulmool.lss.web.model")
+@EntityScan("me.ggulmool.lss.model")
 public class LssApp extends SpringBootServletInitializer {
 	
 	private final static Class<?>[] CONFIGS = {

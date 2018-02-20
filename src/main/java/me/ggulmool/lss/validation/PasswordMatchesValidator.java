@@ -3,7 +3,7 @@ package me.ggulmool.lss.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import me.ggulmool.lss.web.model.User;
+import me.ggulmool.lss.model.User;
 
 public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, Object> {
 

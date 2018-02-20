@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import me.ggulmool.lss.service.IUserService;
 import me.ggulmool.lss.validation.EmailExistsException;
-import me.ggulmool.lss.web.model.User;
+import me.ggulmool.lss.model.User;
 
 @Controller
 @RequestMapping("/user")
@@ -37,7 +37,7 @@ class UserController {
     }
 
     @RequestMapping("{id}")
-    public ModelAndView view(@PathVariable("id") User user) {
+    public ModelAndView view(@PathVariable("id") final User user) {
         return new ModelAndView("tl/view", "user", user);
     }
 
