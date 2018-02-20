@@ -4,3 +4,5 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step2. A Full ﻿Registration Flow
 - step2-0 : 회원가입 웹 SpringDataJPA기반 프로젝트 셋팅
+- step2-1 : 회원가입 기능 구현(DB 저장) / 회원가입 페이지(/signup)은 모든 사용자 접근 가능
+- step2-2 : DB기반 로그인 설정
