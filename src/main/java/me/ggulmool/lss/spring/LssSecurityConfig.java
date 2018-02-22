@@ -1,17 +1,25 @@
 package me.ggulmool.lss.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 @EnableWebSecurity
 public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private DataSource dataSource;
 
     public LssSecurityConfig() {
         super();
@@ -42,18 +50,21 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/login").permitAll()
                 .loginProcessingUrl("/doLogin")
+
             .and()
-            .rememberMe()
-            .tokenValiditySeconds(604800)
-            .key("lssAppKey")
-            //.useSecureCookie(true)
-            .rememberMeCookieName("sticky-cookie")
-            .rememberMeParameter("remember")
+                .rememberMe().tokenRepository(persistentTokenRepository())
 
             .and()
             .logout().permitAll().logoutUrl("/logout")
 
             .and()
             .csrf().disable();
+    }
+
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        final JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        jdbcTokenRepository.setDataSource(dataSource);
+        return jdbcTokenRepository;
     }
 }
