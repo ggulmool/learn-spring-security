@@ -6,3 +6,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 - step3-0 : 회원가입 웹 SpringDataJPA기반 프로젝트 셋팅
 - step3-1 : A Simple Remember Me Flow With Cookie
 - step3-2 : Remember Me with Persistence / MySQL 연동
+- step3-3 : Integration Test / fullyAuthenticated

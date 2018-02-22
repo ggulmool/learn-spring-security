@@ -3,6 +3,7 @@ package me.ggulmool.lss.web.controller;
 import javax.validation.Valid;
 
 import me.ggulmool.lss.model.User;
+import me.ggulmool.lss.persistence.UserRepository;
 import me.ggulmool.lss.service.IUserService;
 import me.ggulmool.lss.validation.EmailExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import me.ggulmool.lss.persistence.UserRepository;
-
 @Controller
 @RequestMapping("/user")
-class UserController {
+public class UserController {
 
     @Autowired
     private UserRepository userRepository;

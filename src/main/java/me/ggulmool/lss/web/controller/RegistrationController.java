@@ -5,13 +5,13 @@ import javax.validation.Valid;
 import java.util.Calendar;
 import java.util.UUID;
 
+import com.google.common.collect.ImmutableMap;
 import me.ggulmool.lss.model.PasswordResetToken;
 import me.ggulmool.lss.model.User;
 import me.ggulmool.lss.model.VerificationToken;
 import me.ggulmool.lss.registration.OnRegistrationCompleteEvent;
 import me.ggulmool.lss.service.IUserService;
 import me.ggulmool.lss.validation.EmailExistsException;
-import com.google.common.collect.ImmutableMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.core.env.Environment;
@@ -32,7 +32,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-class RegistrationController {
+public class RegistrationController {
 
     @Autowired
     private ApplicationEventPublisher eventPublisher;

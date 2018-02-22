@@ -22,6 +22,7 @@ public class LssWebMvcConfiguration extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("loginPage");
         registry.addViewController("/forgotPassword").setViewName("forgotPassword");
+        registry.addViewController("/secure").setViewName("tl/securePage");
 
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }

@@ -35,6 +35,7 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/secure*").fullyAuthenticated()
             .antMatchers("/signup",
                     "/user/register",
                     "/registrationConfirm*",
@@ -52,7 +53,10 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/doLogin")
 
             .and()
-                .rememberMe().tokenRepository(persistentTokenRepository())
+                .rememberMe()
+                .key("lssAppKey")
+                .tokenValiditySeconds(604800) // 1 week = 604800
+                .tokenRepository(persistentTokenRepository())
 
             .and()
             .logout().permitAll().logoutUrl("/logout")
