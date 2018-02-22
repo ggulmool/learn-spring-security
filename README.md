@@ -6,7 +6,7 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 1. [Secure a ﻿﻿Simple﻿﻿ Spring MVC Application](https://github.com/ggulmool/learn-spring-security/tree/step1)
 2. [A Full ﻿Registration Flow](https://github.com/ggulmool/learn-spring-security/tree/step2)
 3. [Remember Me](https://github.com/ggulmool/learn-spring-security/tree/step3)
-3. [Spring﻿﻿﻿ ﻿﻿﻿Security﻿﻿﻿ ﻿﻿on﻿﻿ ﻿the ﻿﻿Client](https://github.com/ggulmool/learn-spring-security/tree/step4)
+4. [Spring﻿﻿﻿ ﻿﻿﻿Security﻿﻿﻿ ﻿﻿on﻿﻿ ﻿the ﻿﻿Client](https://github.com/ggulmool/learn-spring-security/tree/step4)
 
 ### 기술 스택
 - web/REST: SpringBoot 1.5.2
