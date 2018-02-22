@@ -4,3 +4,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step3. Remember Me
 - step3-0 : 회원가입 웹 SpringDataJPA기반 프로젝트 셋팅
+- step3-1 : A Simple Remember Me Flow

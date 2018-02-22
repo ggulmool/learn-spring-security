@@ -42,6 +42,13 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/login").permitAll()
                 .loginProcessingUrl("/doLogin")
+            .and()
+            .rememberMe()
+            .tokenValiditySeconds(604800)
+            .key("lssAppKey")
+            //.useSecureCookie(true)
+            .rememberMeCookieName("sticky-cookie")
+            .rememberMeParameter("remember")
 
             .and()
             .logout().permitAll().logoutUrl("/logout")
