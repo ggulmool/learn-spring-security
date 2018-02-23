@@ -3,7 +3,7 @@ package me.ggulmool.lss.web.controller;
 import javax.validation.Valid;
 
 import me.ggulmool.lss.persistence.UserRepository;
-import me.ggulmool.lss.web.model.User;
+import me.ggulmool.lss.persistence.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

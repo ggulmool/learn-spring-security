@@ -26,22 +26,15 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .authorizeRequests()
-            
-            // .antMatchers("/secured").access("hasRole('USER')")
-        
-            .anyRequest().authenticated()
-        
-        .and()
-        .formLogin().
-            loginPage("/login").permitAll().
-            loginProcessingUrl("/doLogin")
+            .authorizeRequests()
+            .anyRequest().permitAll()
+            .and()
 
-        .and()
-        .logout().permitAll().logoutUrl("/logout")
-        
-        .and()
-        .csrf().disable();
+            .httpBasic()
+
+            .and()
+            .csrf().disable()
+                .headers().frameOptions().disable();
     }
 
 }

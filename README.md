@@ -4,3 +4,5 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step5. Spring Security Expressions
 - step5-1 : By URL Authorization with Expressions
+- step5-2 : On-method Authorization with Expressions
+            In-page URL Authorization with Expressions

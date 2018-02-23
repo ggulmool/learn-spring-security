@@ -1,4 +1,4 @@
-package me.ggulmool.lss.web.model;
+package me.ggulmool.lss.persistence.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
