@@ -8,6 +8,7 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 3. [Remember Me](https://github.com/ggulmool/learn-spring-security/tree/step3)
 4. [Spring﻿﻿﻿ ﻿﻿﻿Security﻿﻿﻿ ﻿﻿on﻿﻿ ﻿the ﻿﻿Client](https://github.com/ggulmool/learn-spring-security/tree/step4)
 5. [Spring Security Expressions](https://github.com/ggulmool/learn-spring-security/tree/step5)
+6. [Password Storage](https://github.com/ggulmool/learn-spring-security/tree/step6)
 
 
 ### 기술 스택
