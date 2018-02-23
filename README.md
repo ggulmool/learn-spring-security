@@ -4,3 +4,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step4. Spring﻿﻿﻿ ﻿﻿﻿Security﻿﻿﻿ ﻿﻿on﻿﻿ ﻿the ﻿﻿Client
 - step4-1 : Spring Security JSP tags
+- step4-2 : The Authentication Tag and Displaying the Current User
