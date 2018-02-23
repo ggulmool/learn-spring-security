@@ -1,10 +1,11 @@
 package me.ggulmool.lss.spring;
 
 import org.springframework.core.Ordered;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-//@EnableWebMvc
+@EnableWebMvc
 public class LssWebMvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
