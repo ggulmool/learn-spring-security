@@ -13,19 +13,19 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <sec:authorize access="hasRole('ROLE_ADMIN')">
-		           <a class="brand" href="/"> Admins Home </a>
-		        </sec:authorize>
-		         
-		        <sec:authorize access="hasRole('ROLE_USER')">
-		            <a class="brand" href="/"> Users Home </a>
-		        </sec:authorize>
-		        <!--  -->
-		        
+                   <a class="brand" href="/"> Admins Home </a>
+                </sec:authorize>
+                 
+                <sec:authorize access="hasRole('ROLE_USER')">
+                    <a class="brand" href="/"> Users Home </a>
+                </sec:authorize>
+                <!--  -->
+                
                 <ul class="nav">
                     <li><a href="${pageContext.request.contextPath}/user"> Users </a></li>
                 </ul>
                 <ul class="nav pull-right">
-                    <li><span class="navbar-text">Hi, <sec:authentication property="principal.username" /></span></li>
+                    <li><a href="${pageContext.request.contextPath}/profile" class="menu-right" > Hi, <sec:authentication property="principal.username" /> </a></li>                
                     <li><a href="${pageContext.request.contextPath}/logout" class="menu-right" > Logout </a></li>
                 </ul>
             </div>
