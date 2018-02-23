@@ -6,3 +6,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 - step4-1 : Spring Security JSP tags
 - step4-2 : The Authentication Tag and Displaying the Current User
 - step4-3 : Spring Security with Thymeleaf
+- step4-4 : The Authorize Tag
