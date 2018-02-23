@@ -7,6 +7,8 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 2. [A Full ﻿Registration Flow](https://github.com/ggulmool/learn-spring-security/tree/step2)
 3. [Remember Me](https://github.com/ggulmool/learn-spring-security/tree/step3)
 4. [Spring﻿﻿﻿ ﻿﻿﻿Security﻿﻿﻿ ﻿﻿on﻿﻿ ﻿the ﻿﻿Client](https://github.com/ggulmool/learn-spring-security/tree/step4)
+5. [Spring Security Expressions](https://github.com/ggulmool/learn-spring-security/tree/step5)
+
 
 ### 기술 스택
 - web/REST: SpringBoot 1.5.2
