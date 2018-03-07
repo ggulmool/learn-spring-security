@@ -4,3 +4,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step6. Password Storage
 - step6-1 : h2 기반 프로젝트 셋팅 / h2-console
+- step6-2 : Hashing Passwords (MD5 and SHA-256)
