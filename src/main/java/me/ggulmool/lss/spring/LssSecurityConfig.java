@@ -13,8 +13,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import me.ggulmool.lss.model.User;
 import me.ggulmool.lss.persistence.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
+
+import java.security.SecureRandom;
 
 @EnableWebSecurity
 public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -41,10 +44,7 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        final DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setPasswordEncoder(passwordEncoder());
-        authenticationProvider.setUserDetailsService(userDetailsService);
-        auth.authenticationProvider(authenticationProvider);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Override
@@ -74,6 +74,6 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new StandardPasswordEncoder();
+        return new BCryptPasswordEncoder(10, new SecureRandom());
     }
 }
