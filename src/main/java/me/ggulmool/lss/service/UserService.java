@@ -16,10 +16,14 @@ class UserService implements IUserService {
     @Autowired
     private UserRepository userRepository;
 
+    // read
+
     @Override
-    public Iterable<User> findAll() {
-        return userRepository.findAll();
+    public User findUserByEmail(final String email) {
+        return userRepository.findByEmail(email);
     }
+
+    // write
 
     @Override
     public User registerNewUser(final User user) throws EmailExistsException {
@@ -27,11 +31,6 @@ class UserService implements IUserService {
             throw new EmailExistsException("There is an account with that email address: " + user.getEmail());
         }
         return userRepository.save(user);
-    }
-
-    @Override
-    public User findUserByEmail(final String email) {
-        return userRepository.findByEmail(email);
     }
 
     private boolean emailExist(final String email) {

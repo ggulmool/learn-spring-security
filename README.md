@@ -10,3 +10,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
     2. 임시 인증 객체에 여분의 권한을 제공해야 한다.
     3. 임시 Authentication 객체는 tryRunAS() 메서드 호출 기간동안 만 기존 Authentication 객체를 대체한다.
     [참조](http://thatjavathing.blogspot.kr/2014/07/spring-security-run-as-example-using.html)
+- step7-3 : [CustomFilterChain](http://www.baeldung.com/spring-security-custom-filter) 설정

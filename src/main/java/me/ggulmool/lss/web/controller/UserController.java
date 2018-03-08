@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import me.ggulmool.lss.model.User;
 import me.ggulmool.lss.persistence.UserRepository;
+import me.ggulmool.lss.service.AsyncBean;
 import me.ggulmool.lss.service.IUserService;
 import me.ggulmool.lss.validation.EmailExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,14 @@ class UserController {
     @Autowired
     private IUserService userService;
 
+    @Autowired
+    private AsyncBean asyncBean;
     //
 
     @RequestMapping
     public ModelAndView list() {
-        Iterable<User> users = this.userService.findAll();
+        final Iterable<User> users = this.userRepository.findAll();
+        asyncBean.asyncMethod();
         return new ModelAndView("tl/list", "users", users);
     }
 

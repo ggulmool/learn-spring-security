@@ -5,10 +5,13 @@ import me.ggulmool.lss.validation.EmailExistsException;
 
 public interface IUserService {
 
-    User registerNewUser(User user) throws EmailExistsException;
+    // read
 
     User findUserByEmail(String email);
 
-    Iterable<User> findAll();
+    // write
+
+    User registerNewUser(User user) throws EmailExistsException;
 
 }
+

@@ -16,15 +16,12 @@ public class LssWebMvcConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        logger.debug("kny log - LssWebMvcConfiguration#addResourceHandlers() call");
         registry.addResourceHandler("/**").addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("loginPage");
-        registry.addViewController("/profile");
-        logger.debug("kny log - LssWebMvcConfiguration#addViewControllers() call");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 
