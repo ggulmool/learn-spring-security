@@ -10,6 +10,7 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 5. [Spring Security Expressions](https://github.com/ggulmool/learn-spring-security/tree/step5)
 6. [Password Storage](https://github.com/ggulmool/learn-spring-security/tree/step6)
 7. [Spring Security Configuration](https://github.com/ggulmool/learn-spring-security/tree/step7)
+8. [Advanced Authentication](https://github.com/ggulmool/learn-spring-security/tree/step8)
 
 ### 기술 스택
 - web/REST: SpringBoot 1.5.2
