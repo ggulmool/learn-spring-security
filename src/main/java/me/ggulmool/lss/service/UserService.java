@@ -17,6 +17,11 @@ class UserService implements IUserService {
     private UserRepository userRepository;
 
     @Override
+    public Iterable<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
     public User registerNewUser(final User user) throws EmailExistsException {
         if (emailExist(user.getEmail())) {
             throw new EmailExistsException("There is an account with that email address: " + user.getEmail());

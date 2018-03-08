@@ -4,16 +4,34 @@
 <title>Profile</title>
 </head>
 <body>
-	<h1 layout:fragment="header">Profile</h1>
-	<div layout:fragment="content" class="container">
-		Current user authorities: <span sec:authentication="principal.authorities">user</span>
-		<br />
-		<br />
-		<br />
-		<span id="temp"></span>
-		<br />
+    <h1 layout:fragment="header">Profile</h1>
+    <div layout:fragment="content" class="container">
+        Current user authorities: <span sec:authentication="principal.authorities">user</span><br/>
+        <br/><br/>
+        <span id="temp"></span>
+        <br/>
+        <a href="#" onclick="tryRunAs()">Generate Report As Super User</a>
+        <a href="#" onclick="tryRunAsGeneral()">Generate Report As General User</a>
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	</div>
+        
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+
+function tryRunAs(){
+    $.get( "/runas" , function( data ) {
+         $("#temp").html(data);
+    });
+}
+
+function tryRunAsGeneral() {
+    $.get("/runas/general", function(data) {
+        $("#temp").html(data);
+    });
+}
+</script>
+</div>
 </body>
 </html>
