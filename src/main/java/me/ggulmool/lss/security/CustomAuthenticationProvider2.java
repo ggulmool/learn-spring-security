@@ -1,5 +1,6 @@
 package me.ggulmool.lss.security;
 
+
 import java.util.ArrayList;
 
 import org.slf4j.Logger;
@@ -12,16 +13,16 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CustomAuthenticationProvider implements AuthenticationProvider {
+public class CustomAuthenticationProvider2 implements AuthenticationProvider {
 
-    private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationProvider.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomAuthenticationProvider2.class);
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         final String name = authentication.getName();
         final String password = authentication.getCredentials().toString();
 
-        logger.debug("CustomAuthenticationProvider call");
+        logger.debug("CustomAuthenticationProvider2 call");
         if (!supportsAuthentication(authentication)) {
             return null;
         }
@@ -41,7 +42,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     //
 
     private boolean doAuthenticationAgainstThirdPartySystem() {
-        return false;
+        return true;
     }
 
     private boolean supportsAuthentication(Authentication authentication) {
