@@ -2,6 +2,7 @@ package me.ggulmool.lss.spring;
 
 import javax.annotation.PostConstruct;
 
+import me.ggulmool.lss.security.CustomAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,11 +16,14 @@ import me.ggulmool.lss.persistence.UserRepository;
 @EnableWebSecurity
 public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserDetailsService userDetailsService;
+//    @Autowired
+//    private UserDetailsService userDetailsService;
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private CustomAuthenticationProvider customAuthenticationProvider;
 
     public LssSecurityConfig() {
         super();
@@ -37,7 +41,8 @@ public class LssSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        //auth.userDetailsService(userDetailsService);
+        auth.authenticationProvider(customAuthenticationProvider);
     }
 
     @Override

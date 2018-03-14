@@ -4,3 +4,4 @@ baeldung 사이트의 [learn-spring-security](https://github.com/eugenp/learn-sp
 
 ### Step8. Advanced Authentication
 - step8-1 : h2 기반 프로젝트 셋팅 / h2-console
+- step8-2 : A Custom Authentication Provider

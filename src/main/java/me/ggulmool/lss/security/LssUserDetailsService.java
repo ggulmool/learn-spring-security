@@ -6,6 +6,8 @@ import java.util.Collection;
 
 import me.ggulmool.lss.model.User;
 import me.ggulmool.lss.persistence.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,13 +19,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class LssUserDetailsService implements UserDetailsService {
-
+    private static final Logger logger = LoggerFactory.getLogger(LssUserDetailsService.class);
     private static final String ROLE_USER = "ROLE_USER";
 
     @Autowired
     private UserRepository userRepository;
 
     public UserDetails loadUserByUsername(final String email) throws UsernameNotFoundException {
+        logger.debug("LssUserDetailsService call");
         final User user = userRepository.findByEmail(email);
         if (user == null) {
             throw new UsernameNotFoundException("No user found with username: " + email);
